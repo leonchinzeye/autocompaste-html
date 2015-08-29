@@ -65,7 +65,31 @@
             </div>
         </div>
 
+        <div class="modal fade" id="transitionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    
+                    
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Jim Raynor</h4>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <img src="img/raynor-modal.png" align="left" style="margin-right:10px">
+                        Jim Raynor was a Confederate marshal on Mar Sara at the time of the first zerg incursions on that world. Despite bravely fighting the alien aggressors and saving many lives, he was arrested by Confederate forces on the pretext of destroying Confederate property at Backwater Station. When he was subsequently liberated by Arcturus Mengsk’s Sons of Korhal, an anti-Confederate revolutionary group, Raynor chose to fight alongside them.
+                        
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>                                                 
+            </div>    
+        </div>
+
         <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         <script src="js/WindowManager.js"></script>
@@ -75,65 +99,9 @@
         <script src="js/autocompaste/autocompaste.js"></script>
         <script src="js/DataStorage.js"></script>
         <script src="js/ACPToolKit.js"></script>
+        <script src="js/experiment.js"></script>
 
-        <script>
 
-            var trialsData;
-            var currentTrial;
-            var totalNumberOfTrials;
-            var headers = ['Participant id', 'Technique', 'Granularity',
-                            'Trial no', 'Stimuli', 'User Response', 'Trial Start Time',
-                            'Trial End Time', 'Trial Time', 'Accuracy'];
-            var trialData = [];
-            var pid;
 
-            function next () {
-                if (currentTrial !== 0) {
-                    var trialResult = ACPToolKit.getCurrentTrialState();
-
-                    var technique = trialResult.technique;
-                    var granularity = trialResult.granularity;
-                    var trialNum = currentTrial;
-                    var stimuli = trialResult.stimuli;
-                    var userResponse = trialResult.user_response;
-                    var trialStartTime = trialResult.start_time;
-                    var trialEndTime = trialResult.end_time;
-                    var trialDuration = trialResult.duration;
-                    var accuracy = stimuli === userResponse ? 1 : 0;
-
-                    var row = [pid, technique, granularity, trialNum,
-                                stimuli, userResponse, trialStartTime,
-                                trialEndTime, trialDuration, accuracy];
-                    trialData.push(row);
-                }
-
-                if (currentTrial < totalNumberOfTrials) {
-                    ACPToolKit.presentTrial(trialsData[currentTrial]);
-                    currentTrial += 1;
-                    $('.js-expt-current-trial').text(currentTrial);
-                } else {
-                    // Last trial completed
-                    ACPToolKit.downloadTrialResults(trialData);
-                    window.location = 'questionnaire-post.html';
-                }
-            }
-
-            $(document).ready(function () {
-                $.get('data/experiments.json', function (data) {
-                    // Hosting server doesn't parse the json objects properly
-                    // this if is for checking the data type
-                    if(typeof data === 'string') {
-                        data = JSON.parse(data);
-                    }
-                    trialsData = data.experiments;
-                    currentTrial = 0;
-                    totalNumberOfTrials = trialsData.length;
-                    $('.js-expt-num-trials').text(totalNumberOfTrials);
-                    trialData.push(headers);
-                    next();
-                    pid = ACPToolKit.getCurrentParticipantId();
-                })
-            });
-        </script>
     </body>
 </html>
