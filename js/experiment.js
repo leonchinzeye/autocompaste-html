@@ -1,13 +1,35 @@
+// trial variables
 var trialsData;
 var currentTrial;
 var totalNumberOfTrials;
-var headers = ['Participant id', 'Technique', 'Granularity',
+var trialHeaders = ['Participant id', 'Technique', 'Granularity',
                 'Trial no', 'Stimuli', 'User Response', 'Trial Start Time',
                 'Trial End Time', 'Trial Time', 'Accuracy'];
 var trialData = [];
 var pid;
 
-function next () {
+// block variables
+
+// flags
+var isTransition;
+var isTrial;
+var isBlocks;
+
+function next() {
+    if(isTrial) {
+        showTrials();
+    } 
+    
+    if(isTransition) {
+        showTransition();
+    }
+    
+    if(isBlocks) {
+        showBlocks();
+    }
+}
+
+function showTrials () {
     if (currentTrial !== 0) {
         var trialResult = ACPToolKit.getCurrentTrialState();
 
@@ -34,19 +56,31 @@ function next () {
     } else {
         // Last trial completed
         ACPToolKit.downloadTrialResults(trialData);
-        callTransition();
+        isTrial = false;
+        isTransition = true;
+        next();
         // window.location = 'questionnaire-post.html';
     }
 }
 
-function callTransition() {
+function showTransition() {
     $('#transitionModal').modal({
         backdrop : 'static',
         keyboard : false
     });
+    isTransition = false;
+    isBlocks = true;
 }
 
+function showBlocks() {
+    
+}
 
+function initFlags() {
+    isTransition = false;
+    isBlocks = false;
+    isTrial = true;
+}
 
 $(document).ready(function () {
     $.get('data/experiments.json', function (data) {
@@ -55,12 +89,15 @@ $(document).ready(function () {
         if(typeof data === 'string') {
             data = JSON.parse(data);
         }
+        
+        initFlags();
+        
         trialsData = data.experiments;
         currentTrial = 0;
         totalNumberOfTrials = trialsData.length;
         $('.js-expt-num-trials').text(totalNumberOfTrials);
-        trialData.push(headers);
-        next();
+        trialData.push(trialHeaders);
+        showTrials();
         pid = ACPToolKit.getCurrentParticipantId();
     })
 });
