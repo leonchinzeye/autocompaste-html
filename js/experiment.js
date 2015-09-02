@@ -1,3 +1,6 @@
+// path variables
+var latinData = "/data/latin_data.json"
+
 // trial variables
 var trialsData;
 var currentTrial;

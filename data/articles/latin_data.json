@@ -1,0 +1,42 @@
+[
+	{
+        "title": "Article 1",
+        "url": "data/articles/latin/text1.txt"
+    },
+    {
+        "title": "Article 2",
+        "url": "data/articles/latin/text2.txt"
+    },
+    {
+        "title": "Article 3",
+        "url": "data/articles/latin/text3.txt"
+    },
+    {
+        "title": "Article 4",
+        "url": "data/articles/latin/text4.txt"
+    },
+    {
+        "title": "Article 5",
+        "url": "data/articles/latin/text5.txt"
+    },
+    {
+        "title": "Article 6",
+        "url": "data/articles/latin/text6.txt"
+    },
+    {
+        "title": "Article 7",
+        "url": "data/articles/latin/text7.txt"
+    },
+    {
+        "title": "Article 8",
+        "url": "data/articles/latin/text8.txt"
+    },
+    {
+        "title": "Article 9",
+        "url": "data/articles/latin/text9.txt"
+    },
+    {
+        "title": "Article 10",
+        "url": "data/articles/latin/text10.txt"
+    }
+]
