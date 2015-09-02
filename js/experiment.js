@@ -9,6 +9,11 @@ var trialData = [];
 var pid;
 
 // block variables
+var participantArrangement = {
+    "technique": [],
+    "granularity": [],
+    "language": []
+}
 
 // flags
 var isTransition;
@@ -82,6 +87,38 @@ function initFlags() {
     isTrial = true;
 }
 
+function initBlocks() {
+    initParticipantArrangement();
+}
+
+function initParticipantArrangement() {
+    $.get('data/combinations.json', function(arrFile) {
+       if(typeof arrFile === 'string') {
+           arrFile = JSON.parse(arrFile);
+       }
+       
+       var tech = arrFile.techniques;
+       var gran = arrFile.granularities;
+       var lang = arrFile.language;      
+       var arrange = arrFile.combinations[pid];
+       var arrangeT = arrange.techniques;
+       var arrangeG = arrange.granularities;
+       var arrangeL = arrange.language;
+       
+       for(var i = 0; i < 2; i++) {
+           for(var j = 0; j < 3; j++) {
+               for(var k = 0; k < 2; k++) {
+                   participantArrangement.technique.push(tech[arrangeT[i]]);
+                   participantArrangement.granularity.push(gran[arrangeG[j]]);
+                   participantArrangement.language.push(lang[arrangeL[k]]);       
+               }
+           }
+       } 
+       
+       console.log(participantArrangement);
+    });
+}
+
 $(document).ready(function () {
     $.get('data/experiments.json', function (data) {
         // Hosting server doesn't parse the json objects properly
@@ -90,8 +127,6 @@ $(document).ready(function () {
             data = JSON.parse(data);
         }
         
-        initFlags();
-        
         trialsData = data.experiments;
         currentTrial = 0;
         totalNumberOfTrials = trialsData.length;
@@ -99,5 +134,8 @@ $(document).ready(function () {
         trialData.push(trialHeaders);
         showTrials();
         pid = ACPToolKit.getCurrentParticipantId();
+        
+        initFlags();
+        initBlocks();
     })
 });
