@@ -38,6 +38,11 @@ var ACPToolKit = (function () {
         var pid = ACPToolKit.getCurrentParticipantId();
         arrayToCSV(data, 'acp-' + pid + '-trials');
     }
+    
+    module.downloadOverallResults = function (data) {
+        var pid = ACPToolKit.getCurrentParticipantId();
+        arrayToCSV(data, 'acp-' + pid + '-live');
+    }
 
     function arrayToCSV (twoDiArray, fileName) {
         //  http://stackoverflow.com/questions/17836273/export-javascript-data

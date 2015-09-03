@@ -22,21 +22,5 @@
     {
         "title": "Article 6",
         "url": "data/articles/english/text6.txt"
-    },
-    {
-        "title": "Article 7",
-        "url": "data/articles/english/text7.txt"
-    },
-    {
-        "title": "Article 8",
-        "url": "data/articles/english/text8.txt"
-    },
-    {
-        "title": "Article 9",
-        "url": "data/articles/english/text9.txt"
-    },
-    {
-        "title": "Article 10",
-        "url": "data/articles/english/text10.txt"
     }
 ]
