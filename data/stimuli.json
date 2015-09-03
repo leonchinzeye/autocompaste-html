@@ -1,0 +1,30 @@
+{
+	"english": {
+		"paragraph": [],
+		"sentence": [],
+		"phrase": []
+	},
+	"latin": {
+		"paragraph": [
+			"Morbi at hendrerit eros, vel semper metus. Nulla facilisi. Proin a viverra lectus, nec ultricies est. Proin fringilla tincidunt volutpat. Ut fermentum mollis malesuada.",
+			"Nullam eleifend lorem quis imperdiet iaculis. Pellentesque vel purus porta, fermentum ipsum non, tincidunt dui. Suspendisse scelerisque enim ac quam imperdiet laoreet.",
+			"Suspendisse lobortis sed est pharetra aliquam. In convallis urna id diam porttitor vehicula. Maecenas luctus mauris porttitor erat dictum, nec scelerisque felis feugiat.",
+			"Maecenas rutrum, mi ac bibendum ultrices, nulla lorem pharetra orci, sed mollis urna lorem sit amet mi. Vestibulum gravida id massa in commodo.",
+			"Suspendisse nibh nisl, congue id sodales eget, interdum at nisi. Fusce mattis lorem eu volutpat finibus. Morbi volutpat tortor et arcu pretium, non consequat augue placerat."
+		],
+		"sentence": [
+			"Donec eleifend arcu nisi, sed dapibus nunc facilisis eget.",
+			"Duis lorem tortor, sollicitudin quis nulla commodo, vulputate finibus sem.",
+			"Fusce congue elit vitae lectus commodo, at tristique felis porttitor.",
+			"Nunc tellus lorem, semper eget urna ac, bibendum gravida felis.",
+			"Praesent et nunc sollicitudin, vestibulum diam non, ultricies ligula."
+		],
+		"phrase": [
+			"dapibus nisl at neque",
+			"fringilla quis tortor nec",
+			"aliquet et dolor mattis",
+			"sit amet tortor tincidunt hendrerit",
+			"quis cursus justo auctor"
+		]
+	}
+}
