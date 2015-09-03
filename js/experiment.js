@@ -1,6 +1,6 @@
 // path variables
-var latArticlePath = "/data/articles/latin_data.json"
-var engArticlePath = "/data/articles/english_data.json"
+var latArticlePath = "./data/articles/latin_data.json"
+var engArticlePath = "./data/articles/english_data.json"
 
 // trial variables
 var trialsData;
