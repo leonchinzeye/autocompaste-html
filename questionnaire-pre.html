@@ -46,7 +46,7 @@
 
                 <form id="pre-expt-form">
                     <div class="form-group">
-                        <label for="q1">Please indicate the age group you belong to.</label>
+                        <label for="q1">1) Please indicate the age group you belong to.</label>
                         <div class="radio">
                             <label>
                                 <input type="radio" name="q1" id="optionsRadios1" value="19 - 24"> 19 - 24
@@ -75,7 +75,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="q2">On average, how many hours do you spend on the computer daily?</label>
+                        <label for="q2">2) On average, how many hours do you spend on the computer daily?</label>
                         <div class="radio">
                             <label>
                                 <input type="radio" name="q2" value="Rarely"> Rarely
@@ -104,7 +104,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="q3">List the operating platforms that you are <u>comfortable</u> with working on. <u>You can select more than one.</u></label>
+                        <label for="q3">3) List the operating platforms that you are <u>comfortable</u> with working on. <u>You can select more than one.</u></label>
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox" name="q3" value="Windows"> Windows
@@ -121,62 +121,67 @@
                             </label>
                         </div>
                         <div class="checkbox">
-                            <label>
-                                <input type="checkbox" name="q3" value="Others"> Others: Please write them in the text area below
-                            </label>
+                            Others: Please write them in the text area below
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" name="q3-Others"></textarea>
+                            <textarea class="form-control" name="q3"></textarea>
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="q4">Gender</u></label>
+                        <label for="q4">4) Gender</u></label>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="q3-gender" value="Male"> Male
+                                <input type="radio" name="q4" value="Male"> Male
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="q3-gender" value="Female"> Female
+                                <input type="radio" name="q4" value="Female"> Female
                             </label>
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="q5">Please select your handedness</u></label>
+                        <label for="q5">5) Please select your handedness</u></label>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="q5-hand" value="Left"> Left
+                                <input type="radio" name="q5" value="Left"> Left
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="q5 hand" value="Right"> Right
+                                <input type="radio" name="q5" value="Right"> Right
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="q5 hand" value="Ambidextrous"> Ambidextrous
+                                <input type="radio" name="q5" value="Ambidextrous"> Ambidextrous
                             </label>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="q4">Question 4 - Select Options</label>
-                        <select class="form-control" name="q4">
-                            <option value="option1">Option response 1</option>
-                            <option value="option2">Option response 2</option>
-                            <option value="option3">Option response 3</option>
-                            <option value="option4">Option response 4</option>
-                            <option value="option1">Option response 5</option>
-                        </select>
+                        <label for="q6">6) Which of the following are you using to complete this experiment?</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q6" value="Laptop"> Laptop (inbuilt keyboard)
+                            </label>
+                        </div>
+                        
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q6" value="Laptop(ext)"> Laptop (external keyboard)
+                            </label>
+                        </div>
+                        
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q6" value="Desktop"> Desktop with external keyboard
+                            </label>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="q5">Question 5 - Textarea</label>
-                        <textarea class="form-control" id="q5" name="q5" placeholder="Enter response"></textarea>
-                    </div>
+                    
                     <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                 </form>
             </div>
@@ -193,12 +198,55 @@
         $(function () {
                 $('#pre-expt-form').submit(function (event) {
                     event.preventDefault();
-                    var formResponses = $(this).serializeArray();
-                    // Do your own form validation here.
-                    ACPToolKit.downloadFormData(formResponses, 'pre');
-                    window.location = 'instructions.html';
+                    if(validateForm()) {
+                        var formResponses = $(this).serializeArray();
+                        ACPToolKit.downloadFormData(formResponses, 'pre');
+                        window.location = 'instructions.html';
+                    }
                 });
             });
+            
+        function validateForm() {
+            var a = document.forms["pre-expt-form"]["q1"].value;
+            var b = document.forms["pre-expt-form"]["q2"].value;
+            var c = document.forms["pre-expt-form"]["q3"];
+            var d = document.forms["pre-expt-form"]["q4"].value;
+            var e = document.forms["pre-expt-form"]["q5"].value;
+            var f = document.forms["pre-expt-form"]["q6"].value;
+            
+            if(a == null || a == "") {
+                alert("Please fill in question 1.");
+                return false;
+            }
+            
+            if(b == null || b == "") {
+                alert("Please fill in question 2.");
+                return false;
+            }
+            
+            if(!c[0].checked && !c[1].checked && !c[2].checked && (c[3].value == null || c[3].value == "")) {
+                alert("Please fill in question 3.");
+                return false;
+            }
+            
+            if(d == null || d == "") {
+                alert("Please fill in question 4.");
+                return false;
+            }
+            
+            if(e == null || e == "") {
+                alert("Please fill in question 5.");
+                return false;
+            }
+            
+            if(f == null || f == "") {
+                alert("Please fill in question 6.");
+                return false;
+            }
+            
+            return true;
+        }
+       
     </script>
 </body>
 
