@@ -179,6 +179,21 @@
                         </div>
                     </div>
                     
+                    <div class="form-group">
+                        <label for="q7">7) Are you using a mouse?</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q7" value="No mouse"> No
+                            </label>
+                        </div>
+                        
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q7" value="Mouse"> Yes
+                            </label>
+                        </div>
+                    </div>
+                    
                     <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                 </form>
             </div>
@@ -210,6 +225,7 @@
             var d = document.forms["pre-expt-form"]["q4"].value;
             var e = document.forms["pre-expt-form"]["q5"].value;
             var f = document.forms["pre-expt-form"]["q6"].value;
+            var g = document.forms["pre-expt-form"]["q7"].value;
             
             if(a == null || a == "") {
                 alert("Please fill in question 1.");
@@ -237,6 +253,11 @@
             }
             
             if(f == null || f == "") {
+                alert("Please fill in question 6.");
+                return false;
+            }
+            
+            if(g == null || g == "") {
                 alert("Please fill in question 6.");
                 return false;
             }
@@ -279,6 +300,11 @@
             }
             
             if(f == null || f == "") {
+                alert("Please fill in question 6.");
+                return false;
+            }
+            
+            if(g == null || g == "") {
                 alert("Please fill in question 6.");
                 return false;
             }
