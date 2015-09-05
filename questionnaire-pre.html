@@ -1,107 +1,196 @@
 <!doctype html>
 <html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>CS4249 Assignment 1</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/style.css">
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 8]>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CS4249 Assignment 1</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <nav class="navbar navbar-default">
-            <div class="container">
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html">Welcome</a></li>
-                        <li class="active"><a href="questionnaire-pre.html">Pre Questionnaire</a></li>
-                        <li><a href="instructions.html">Instructions</a></li>
-                        <li><a href="experiment.html">Experiment</a></li>
-                        <li><a href="questionnaire-post.html">Post Questionnaire</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
+    <nav class="navbar navbar-default">
         <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <h1>Pre-Experiment Questionnaire</h1>
-                    <hr>
-                    <p>This part of the interface collects whatever pre-experiment information. Please come up with a basic questionnaire to help you to gather participant information. The purpose of this questionnaire is to report the participant data and convince readers that you have picked an appropriate target user group and the result has certain generalizability.</p>
-
-                    <p>Please put all information needed for participant: <span class="js-pid pid"></span></p>
-
-                    <form id="pre-expt-form">
-                        <div class="form-group">
-                            <label for="q1">Question 1 - Text</label>
-                            <input type="text" class="form-control" id="q1" name="q1" placeholder="Enter answer">
-                        </div>
-                        <div class="form-group">
-                            <label for="q2">Question 2 - Radio</label>
-                            <div class="radio">
-                              <label>
-                                <input type="radio" name="q2" id="optionsRadios1" value="radio1">
-                                Radio response 1
-                              </label>
-                            </div>
-                            <div class="radio">
-                              <label>
-                                <input type="radio" name="q2" id="optionsRadios2" value="radio2">
-                                Radio response 2
-                              </label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="q3">Question 3 - Checkbox</label>
-                            <div class="checkbox">
-                              <label>
-                                <input type="checkbox" name="q3" value="checkbox1">
-                                Checkbox response 1
-                              </label>
-                            </div>
-                            <div class="checkbox">
-                              <label>
-                                <input type="checkbox" name="q3" value="checkbox2">
-                                Checkbox response 2
-                              </label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="q4">Question 4 - Select Options</label>
-                            <select class="form-control" name="q4">
-                                <option value="option1">Option response 1</option>
-                                <option value="option2">Option response 2</option>
-                                <option value="option3">Option response 3</option>
-                                <option value="option4">Option response 4</option>
-                                <option value="option1">Option response 5</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="q5">Question 5 - Textarea</label>
-                            <textarea class="form-control" id="q5" name="q5" placeholder="Enter response"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                    </form>
-                </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Welcome</a></li>
+                    <li class="active"><a href="questionnaire-pre.html">Pre Questionnaire</a></li>
+                    <li><a href="instructions.html">Instructions</a></li>
+                    <li><a href="experiment.html">Experiment</a></li>
+                    <li><a href="questionnaire-post.html">Post Questionnaire</a></li>
+                </ul>
             </div>
         </div>
+    </nav>
 
-        <script src="js/vendor/jquery-1.11.2.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/DataStorage.js"></script>
-        <script src="js/ACPToolKit.js"></script>
-        <script src="js/main.js"></script>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h1>Pre-Experiment Questionnaire</h1>
+                <hr>
+                <p>This part of the interface collects whatever pre-experiment information. Please come up with a basic questionnaire
+                    to help you to gather participant information. The purpose of this questionnaire is to report the participant
+                    data and convince readers that you have picked an appropriate target user group and the result has certain
+                    generalizability.</p>
 
-        <script>
-            $(function () {
+                <p>Please put all information needed for participant: <span class="js-pid pid"></span></p>
+
+                <form id="pre-expt-form">
+                    <div class="form-group">
+                        <label for="q1">Please indicate the age group you belong to.</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q1" id="optionsRadios1" value="19 - 24"> 19 - 24
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q1" id="optionsRadios2" value="25 - 30"> 25 - 30
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q1" id="optionsRadios3" value="31 - 36"> 31 - 36
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q1" id="optionsRadios4" value="37 - 42"> 37 - 42
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q1" id="optionsRadios5" value="43 - 48"> 43 - 48
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="q2">On average, how many hours do you spend on the computer daily?</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q2" value="Rarely"> Rarely
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q2" value="1 - 2 hours"> 1 - 2 hours
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q2" value="3 - 4 hours"> 3 - 4 hours
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q2" value="5 - 6 hours"> 5 - 6 hours
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q2" value="More than 7 hours"> More than 7 hours
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="q3">List the operating platforms that you are <u>comfortable</u> with working on. <u>You can select more than one.</u></label>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="q3" value="Windows"> Windows
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="q3" value="OSX"> Mac OSX
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="q3" value="Linux"> Linux
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="q3" value="Others"> Others: Please write them in the text area below
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="q3-Others"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="q4">Gender</u></label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q3-gender" value="Male"> Male
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q3-gender" value="Female"> Female
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="q5">Please select your handedness</u></label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q5-hand" value="Left"> Left
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q5 hand" value="Right"> Right
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q5 hand" value="Ambidextrous"> Ambidextrous
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="q4">Question 4 - Select Options</label>
+                        <select class="form-control" name="q4">
+                            <option value="option1">Option response 1</option>
+                            <option value="option2">Option response 2</option>
+                            <option value="option3">Option response 3</option>
+                            <option value="option4">Option response 4</option>
+                            <option value="option1">Option response 5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="q5">Question 5 - Textarea</label>
+                        <textarea class="form-control" id="q5" name="q5" placeholder="Enter response"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/DataStorage.js"></script>
+    <script src="js/ACPToolKit.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        $(function () {
                 $('#pre-expt-form').submit(function (event) {
                     event.preventDefault();
                     var formResponses = $(this).serializeArray();
@@ -110,6 +199,7 @@
                     window.location = 'instructions.html';
                 });
             });
-        </script>
-    </body>
+    </script>
+</body>
+
 </html>
