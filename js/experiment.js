@@ -15,8 +15,8 @@ var pid;
 // block variables
 var overallResults = [];
 var currentCondition;
-var totalNumberOfBlocks = 3;
-var totalNumberOfConditions = 108;
+var totalNumberOfBlocks = 2;
+var totalNumberOfConditions = 72;
 var conditionsPerBlock = 36;
 var blockNum;
 var participantArrangement = {
@@ -277,6 +277,7 @@ function initBlocks() {
 
   $.get('data/stimuli.json', function (stimuliFile) {
     stimuliFile = getJson(stimuliFile);
+    console.log(stimuliFile);
 
     engParaStimA = _.shuffle(stimuliFile.english.paragraph);
     engSentStimA = _.shuffle(stimuliFile.english.sentence);
