@@ -12,112 +12,52 @@
         },
         "P03": {
             "techniques": [0, 1],
-            "granularities": [0, 2, 1],
+            "granularities": [1, 2, 0],
             "language": [0, 1]
         },
         "P04": {
             "techniques": [0, 1],
-            "granularities": [0, 2, 1],
+            "granularities": [1, 2, 0],
             "language": [1, 0]
         },
         "P05": {
             "techniques": [0, 1],
-            "granularities": [1, 0, 2],
+            "granularities": [2, 0, 1],
             "language": [0, 1]
         },
         "P06": {
             "techniques": [0, 1],
-            "granularities": [1, 0, 2],
+            "granularities": [2, 0, 1],
             "language": [1, 0]
         },
         "P07": {
-            "techniques": [0, 1],
-            "granularities": [1, 2, 0],
+            "techniques": [1, 0],
+            "granularities": [0, 1, 2],
             "language": [0, 1]
         },
         "P08": {
-            "techniques": [0, 1],
-            "granularities": [1, 2, 0],
+            "techniques": [1, 0],
+            "granularities": [0, 1, 2],
             "language": [1, 0]
         },
         "P09": {
-            "techniques": [0, 1],
-            "granularities": [2, 0, 1],
+            "techniques": [1, 0],
+            "granularities": [1, 2, 0],
             "language": [0, 1]
         },
         "P10": {
-            "techniques": [0, 1],
-            "granularities": [2, 0, 1],
+            "techniques": [1, 0],
+            "granularities": [1, 2, 0],
             "language": [1, 0]
         },
         "P11": {
-            "techniques": [0, 1],
-            "granularities": [2, 1, 0],
+            "techniques": [1, 0],
+            "granularities": [2, 0, 1],
             "language": [0, 1]
         },
         "P12": {
-            "techniques": [0, 1],
-            "granularities": [2, 1, 0],
-            "language": [1, 0]
-        },
-        "P13": {
-            "techniques": [1, 0],
-            "granularities": [0, 1, 2],
-            "language": [0, 1]
-        },
-        "P14": {
-            "techniques": [1, 0],
-            "granularities": [0, 1, 2],
-            "language": [1, 0]
-        },
-        "P15": {
-            "techniques": [1, 0],
-            "granularities": [0, 2, 1],
-            "language": [0, 1]
-        },
-        "P16": {
-            "techniques": [1, 0],
-            "granularities": [0, 2, 1],
-            "language": [1, 0]
-        },
-        "P17": {
-            "techniques": [1, 0],
-            "granularities": [1, 0, 2],
-            "language": [0, 1]
-        },
-        "P18": {
-            "techniques": [1, 0],
-            "granularities": [1, 0, 2],
-            "language": [1, 0]
-        },
-        "P19": {
-            "techniques": [1, 0],
-            "granularities": [1, 2, 0],
-            "language": [0, 1]
-        },
-        "P20": {
-            "techniques": [1, 0],
-            "granularities": [1, 2, 0],
-            "language": [1, 0]
-        },
-        "P21": {
             "techniques": [1, 0],
             "granularities": [2, 0, 1],
-            "language": [0, 1]
-        },
-        "P22": {
-            "techniques": [1, 0],
-            "granularities": [2, 0, 1],
-            "language": [1, 0]
-        },
-        "P23": {
-            "techniques": [1, 0],
-            "granularities": [2, 1, 0],
-            "language": [0, 1]
-        },
-        "P24": {
-            "techniques": [1, 0],
-            "granularities": [2, 1, 0],
             "language": [1, 0]
         }
     },
