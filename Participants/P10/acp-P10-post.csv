@@ -1,0 +1,6 @@
+"pid","q1","q2","q3","q4","q5"
+"P10","2","3","3","The main difficulty from the traditional method was trying to find where the stimulus was in the data. If the yellow highlight was not present, it would be even more difficult and time consuming to complete the task.
+
+Also, sometimes the data windows would be almost fully off the grey area, so it would take some time to find the window and drag it up, causing some delay.
+
+The main difficulty for AutoComPaste was the need to actually fill in the exact phrase when the phrase stimulus was given. There's a need to delete/backspace the irrelevant text to get the correct stimulus, so that takes some time. ","Maybe allow input of "start" and "end" words so that the phrase fills in automatically based on this input?"
