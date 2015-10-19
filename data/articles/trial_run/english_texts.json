@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Data 1",
+        "url": "data/articles/trial_run/english/data1.txt"
+    },
+    {
+        "title": "Data 2",
+        "url": "data/articles/trial_run/english/data2.txt"
+    },
+    {
+        "title": "Article 3",
+        "url": "data/articles/trial_run/english/Article_3.txt"
+    },
+    {
+        "title": "Article 4",
+        "url": "data/articles/trial_run/english/Article_4.txt"
+    },
+    {
+        "title": "Article 5",
+        "url": "data/articles/trial_run/english/Article_5.txt"
+    },
+    {
+        "title": "Article 6",
+        "url": "data/articles/trial_run/english/Article_6.txt"
+    }
+]

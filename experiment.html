@@ -46,8 +46,8 @@
                                 <td><span class="js-expt-granularity">Phrase</span></td>
                             </tr>
                             <tr>
-                                <td>Independent Variable 3</td>
-                                <td>???</td>
+                                <td>Language</td>
+                                <td><span class="js-expt-language">English</td>
                             </tr>
                             <tr>
                                 <td>Trial</td>
@@ -65,7 +65,69 @@
             </div>
         </div>
 
+        <div class="modal fade" id="transitionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    
+                    
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">We're just about to start!</h4>
+                    </div>
+                    
+                    <div class="modal-body">
+                        Please take a break before moving on to the experiment. When you're ready, please press the "Continue" button at the bottom.
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="continueToBlocks()">Continue</button>
+                    </div>
+                </div>                                                 
+            </div>    
+        </div>
+        
+        <div class="modal fade" id="breakModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    
+                    
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Hang in there!</h4>
+                    </div>
+                    
+                    <div class="modal-body">
+                        You're done with a block! Please take a break before moving on to the next block.
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="breakContinue()">Continue</button>
+                    </div>
+                </div>                                                 
+            </div>    
+        </div>
+        
+        <div class="modal fade" id="endModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    
+                    
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Yay!!!</h4>
+                    </div>
+                    
+                    <div class="modal-body">
+                        You're done with the experiment! Phew! Thank you for your patience. Please take some time to fill in the questionnaire on the next page. 
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="end()">Continue</button>
+                    </div>
+                </div>                                                 
+            </div>    
+        </div>
+
         <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/vendor/lodash.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         <script src="js/WindowManager.js"></script>
@@ -75,60 +137,8 @@
         <script src="js/autocompaste/autocompaste.js"></script>
         <script src="js/DataStorage.js"></script>
         <script src="js/ACPToolKit.js"></script>
+        <script src="js/experiment.js"></script>
+        
 
-        <script>
-
-            var trialsData;
-            var currentTrial;
-            var totalNumberOfTrials;
-            var headers = ['Participant id', 'Technique', 'Granularity',
-                            'Trial no', 'Stimuli', 'User Response', 'Trial Start Time',
-                            'Trial End Time', 'Trial Time', 'Accuracy'];
-            var trialData = [];
-            var pid;
-
-            function next () {
-                if (currentTrial !== 0) {
-                    var trialResult = ACPToolKit.getCurrentTrialState();
-
-                    var technique = trialResult.technique;
-                    var granularity = trialResult.granularity;
-                    var trialNum = currentTrial;
-                    var stimuli = trialResult.stimuli;
-                    var userResponse = trialResult.user_response;
-                    var trialStartTime = trialResult.start_time;
-                    var trialEndTime = trialResult.end_time;
-                    var trialDuration = trialResult.duration;
-                    var accuracy = stimuli === userResponse ? 1 : 0;
-
-                    var row = [pid, technique, granularity, trialNum,
-                                stimuli, userResponse, trialStartTime,
-                                trialEndTime, trialDuration, accuracy];
-                    trialData.push(row);
-                }
-
-                if (currentTrial < totalNumberOfTrials) {
-                    ACPToolKit.presentTrial(trialsData[currentTrial]);
-                    currentTrial += 1;
-                    $('.js-expt-current-trial').text(currentTrial);
-                } else {
-                    // Last trial completed
-                    ACPToolKit.downloadTrialResults(trialData);
-                    window.location = 'questionnaire-post.html';
-                }
-            }
-
-            $(document).ready(function () {
-                $.get('data/experiments.json', function (data) {
-                    trialsData = data.experiments;
-                    currentTrial = 0;
-                    totalNumberOfTrials = trialsData.length;
-                    $('.js-expt-num-trials').text(totalNumberOfTrials);
-                    trialData.push(headers);
-                    next();
-                    pid = ACPToolKit.getCurrentParticipantId();
-                })
-            });
-        </script>
     </body>
 </html>

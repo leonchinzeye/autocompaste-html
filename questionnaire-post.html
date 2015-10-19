@@ -35,59 +35,123 @@
                 <div class="col-md-8 col-md-offset-2">
                     <h1>Post-Experiment Questionnaire</h1>
                     <hr>
-                    <p>This part of the interface collects whatever post-experiment information. After the experiment, you want to collect more qualitative and quantitative feedback about the tested techniques. Some of the typical questions include, personal preferences, any difficulties participants experienced in the experiment, and areas of improvement. Please design a basic post-experimental questionnaire (no more than 10 questions).</p>
+                    <p>Thank you for completing the experiment. Before we end off, I would like to gather some feedback about the techniques involved! </p>
 
-                    <p>Current participant: <span class="js-pid pid"></span></p>
+                    <p>Current participant Number: <span class="js-pid pid"></span></p>
 
                     <form id="post-expt-form">
                         <div class="form-group">
-                            <label for="q1">Question 1 - Text</label>
-                            <input type="text" class="form-control" id="q1" name="q1" placeholder="Enter answer">
-                        </div>
-                        <div class="form-group">
-                            <label for="q2">Question 2 - Radio</label>
+                            <label for="q1">1) On a scale of 1 to 5, 5 being very easy and 1 being very difficult, how easy was it using the Traditional method (Ctrl + C, Ctrl + V) to copy-paste entities?</label>
                             <div class="radio">
-                              <label>
-                                <input type="radio" name="q2" id="optionsRadios1" value="radio1">
-                                Radio response 1
-                              </label>
+                                <label>
+                                    <input type="radio" name="q1" value="1">
+                                    1 (very easy)
+                                </label>
                             </div>
                             <div class="radio">
-                              <label>
-                                <input type="radio" name="q2" id="optionsRadios2" value="radio2">
-                                Radio response 2
-                              </label>
+                                <label>
+                                    <input type="radio" name="q1" value="2">
+                                    2
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="q1" value="3">
+                                    3
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="q1" value="4">
+                                    4
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="q1" value="5">
+                                    5 (very difficult)
+                                </label>
                             </div>
                         </div>
+                        
                         <div class="form-group">
-                            <label for="q3">Question 3 - Checkbox</label>
-                            <div class="checkbox">
-                              <label>
-                                <input type="checkbox" name="q3" value="checkbox1">
-                                Checkbox response 1
-                              </label>
+                            <label for="q2">2) On a scale of 1 to 5, 5 being very easy and 1 being very difficult, how easy was it using the AutoComPaste method to copy-paste entities</label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="q2" value="1">
+                                    1 (very easy)
+                                </label>
                             </div>
-                            <div class="checkbox">
-                              <label>
-                                <input type="checkbox" name="q3" value="checkbox2">
-                                Checkbox response 2
-                              </label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="q2" value="2">
+                                    2
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="q2" value="3">
+                                    3
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="q2" value="4">
+                                    4
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="q2" value="5">
+                                    5 (very difficult)
+                                </label>
                             </div>
                         </div>
+                        
                         <div class="form-group">
-                            <label for="q4">Question 4 - Select Options</label>
-                            <select class="form-control" name="q4">
-                                <option value="option1">Option response 1</option>
-                                <option value="option2">Option response 2</option>
-                                <option value="option3">Option response 3</option>
-                                <option value="option4">Option response 4</option>
-                                <option value="option1">Option response 5</option>
-                            </select>
+                            <label for="q3">3) On a scale of 1 to 5, 5 being most likely and 1 being least likely, how likely are you going to use the AutoComPaste technique compared to the traditional technique</label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="q3" value="1">
+                                    1 (least likely)
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="q3" value="2">
+                                    2
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="q3" value="3">
+                                    3
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="q3" value="4">
+                                    4
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="q3" value="5">
+                                    5 (most likely)
+                                </label>
+                            </div>
                         </div>
+                        
                         <div class="form-group">
-                            <label for="q5">Question 5 - Textarea</label>
-                            <textarea class="form-control" id="q5" name="q5" placeholder="Enter response"></textarea>
+                            <label for="q4">4) Did you face any difficulties when performing the experiment? If yes, please kindly fill in the text box below.</label>
+                            <textarea class="form-control" id="q4" name="q4"></textarea>
                         </div>
+                        
+                        <div class="form-group">
+                            <label for="q5">5) Do you have any feedback on how we could improve AutoComPaste? If yes, please kindly fill in the text bow below with your feed back.</label>
+                            <textarea class="form-control" id="q5" name="q5"></textarea>
+                        </div>
+                        
                         <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                     </form>
                 </div>
@@ -104,13 +168,37 @@
             $(function () {
                 $('#post-expt-form').submit(function (event) {
                     event.preventDefault();
-                    var formResponses = $(this).serializeArray();
-                    // Do your own form validation here.
-                    ACPToolKit.downloadFormData(formResponses, 'post');
-                    ACPToolKit.clearAllData();
-                    alert('Thank you for your participation!');
+                    if(validateForm()) {
+                        var formResponses = $(this).serializeArray();
+                        ACPToolKit.downloadFormData(formResponses, 'post');
+                        ACPToolKit.clearAllData();
+                        alert('Thank you for your participation!');
+                    }
                 });
             });
+            
+            function validateForm() {
+                var a = document.forms["post-expt-form"]["q1"].value;
+                var b = document.forms["post-expt-form"]["q2"].value;
+                var c = document.forms["post-expt-form"]["q3"].value;
+                
+                if(a == null || a == "") {
+                    alert("Please fill in question 1.");
+                    return false;
+                }
+                
+                if(b == null || b == "") {
+                    alert("Please fill in question 2.");
+                    return false;
+                }
+                
+                if(c == null || c == "") {
+                    alert("Please fill in question 3.");
+                    return false;
+                }
+            
+                return true;
+            }
         </script>
     </body>
 </html>

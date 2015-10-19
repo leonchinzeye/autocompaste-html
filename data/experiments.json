@@ -3,38 +3,86 @@
         { 
             "technique": "AUTOCOMPASTE", 
             "granularity": "sentence",
-            "data_file": "data/texts.json",
+            "language": "English",
+            "data_file": "data/articles/trial_run/english_texts.json",
             "stimuli": "What is acceptor atoms?" 
         },
         { 
             "technique": "AUTOCOMPASTE", 
             "granularity": "paragraph",
-            "data_file": "data/texts.json",
+            "language": "English",
+            "data_file": "data/articles/trial_run/english_texts.json",
             "stimuli": "What is AC coupling? Circuit that passes an AC signal while blocking a DC voltage." 
         },
         { 
             "technique": "AUTOCOMPASTE", 
             "granularity": "phrase",
-            "data_file": "data/texts.json",
+            "language": "English",
+            "data_file": "data/articles/trial_run/english_texts.json",
             "stimuli": "number of positive charges" 
         },
         { 
             "technique": "TRADITIONAL", 
             "granularity": "sentence",
-            "data_file": "data/texts.json",
+            "language": "English",
+            "data_file": "data/articles/trial_run/english_texts.json",
             "stimuli": "What is acceptor atoms?" 
         },
         { 
             "technique": "TRADITIONAL", 
             "granularity": "paragraph",
-            "data_file": "data/texts.json",
+            "language": "English",
+            "data_file": "data/articles/trial_run/english_texts.json",
             "stimuli": "What is AC coupling? Circuit that passes an AC signal while blocking a DC voltage." 
         },
         { 
             "technique": "TRADITIONAL", 
             "granularity": "phrase",
-            "data_file": "data/texts.json",
+            "language": "English",
+            "data_file": "data/articles/trial_run/english_texts.json",
             "stimuli": "number of positive charges" 
-        }        
+        },
+        { 
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "sentence",
+            "language": "Latin",
+            "data_file": "data/articles/trial_run/latin_texts.json",
+            "stimuli": "Nulla leo purus, interdum gravida purus eget, fermentum imperdiet ex." 
+        },
+        { 
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "paragraph",
+            "language": "Latin",
+            "data_file": "data/articles/trial_run/latin_texts.json",
+            "stimuli": "Suspendisse nulla elit, aliquam vitae venenatis nec, eleifend eu nulla. Donec non tortor eget urna bibendum cursus eget sed erat. Praesent vitae suscipit sem. Fusce tristique vitae augue et semper. Nulla ut commodo justo." 
+        },
+        { 
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "phrase",
+            "language": "Latin",
+            "data_file": "data/articles/trial_run/latin_texts.json",
+            "stimuli": "fringilla tristique" 
+        },
+        { 
+            "technique": "TRADITIONAL", 
+            "granularity": "sentence",
+            "language": "Latin",
+            "data_file": "data/articles/trial_run/latin_texts.json",
+            "stimuli": "Aliquam ut commodo ex, in consequat nibh." 
+        },
+        { 
+            "technique": "TRADITIONAL", 
+            "granularity": "paragraph",
+            "language": "Latin",
+            "data_file": "data/articles/trial_run/latin_texts.json",
+            "stimuli": "Quisque tincidunt tristique arcu, ac scelerisque ex egestas condimentum. Nam in odio elementum, sodales sem non, hendrerit turpis." 
+        },
+        { 
+            "technique": "TRADITIONAL", 
+            "granularity": "phrase",
+            "language": "Latin",
+            "data_file": "data/articles/trial_run/latin_texts.json",
+            "stimuli": "sed consectetur tortor" 
+        }    
     ]
 }

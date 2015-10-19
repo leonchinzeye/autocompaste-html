@@ -1,115 +1,316 @@
 <!doctype html>
 <html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>CS4249 Assignment 1</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/style.css">
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 8]>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CS4249 Assignment 1</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <nav class="navbar navbar-default">
-            <div class="container">
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html">Welcome</a></li>
-                        <li class="active"><a href="questionnaire-pre.html">Pre Questionnaire</a></li>
-                        <li><a href="instructions.html">Instructions</a></li>
-                        <li><a href="experiment.html">Experiment</a></li>
-                        <li><a href="questionnaire-post.html">Post Questionnaire</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
+    <nav class="navbar navbar-default">
         <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <h1>Pre-Experiment Questionnaire</h1>
-                    <hr>
-                    <p>This part of the interface collects whatever pre-experiment information. Please come up with a basic questionnaire to help you to gather participant information. The purpose of this questionnaire is to report the participant data and convince readers that you have picked an appropriate target user group and the result has certain generalizability.</p>
-
-                    <p>Please put all information needed for participant: <span class="js-pid pid"></span></p>
-
-                    <form id="pre-expt-form">
-                        <div class="form-group">
-                            <label for="q1">Question 1 - Text</label>
-                            <input type="text" class="form-control" id="q1" name="q1" placeholder="Enter answer">
-                        </div>
-                        <div class="form-group">
-                            <label for="q2">Question 2 - Radio</label>
-                            <div class="radio">
-                              <label>
-                                <input type="radio" name="q2" id="optionsRadios1" value="radio1">
-                                Radio response 1
-                              </label>
-                            </div>
-                            <div class="radio">
-                              <label>
-                                <input type="radio" name="q2" id="optionsRadios2" value="radio2">
-                                Radio response 2
-                              </label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="q3">Question 3 - Checkbox</label>
-                            <div class="checkbox">
-                              <label>
-                                <input type="checkbox" name="q3" value="checkbox1">
-                                Checkbox response 1
-                              </label>
-                            </div>
-                            <div class="checkbox">
-                              <label>
-                                <input type="checkbox" name="q3" value="checkbox2">
-                                Checkbox response 2
-                              </label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="q4">Question 4 - Select Options</label>
-                            <select class="form-control" name="q4">
-                                <option value="option1">Option response 1</option>
-                                <option value="option2">Option response 2</option>
-                                <option value="option3">Option response 3</option>
-                                <option value="option4">Option response 4</option>
-                                <option value="option1">Option response 5</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="q5">Question 5 - Textarea</label>
-                            <textarea class="form-control" id="q5" name="q5" placeholder="Enter response"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                    </form>
-                </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Welcome</a></li>
+                    <li class="active"><a href="questionnaire-pre.html">Pre Questionnaire</a></li>
+                    <li><a href="instructions.html" onclick="validateForm1()">Instructions</a></li>
+                    <li><a href="experiment.html" onclick="validateForm1()">Experiment</a></li>
+                    <li><a href="questionnaire-post.html" onclick="validateForm1()">Post Questionnaire</a></li>
+                </ul>
             </div>
         </div>
+    </nav>
 
-        <script src="js/vendor/jquery-1.11.2.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/DataStorage.js"></script>
-        <script src="js/ACPToolKit.js"></script>
-        <script src="js/main.js"></script>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h1>Pre-Experiment Questionnaire</h1>
+                <hr>
+                <p>Hi! Before we start the experiment, I would kindly appreciate it if you could fill in this form!</p>
 
-        <script>
-            $(function () {
-                $('#pre-expt-form').submit(function (event) {
-                    event.preventDefault();
+                <p>Current Participant Number: <span class="js-pid pid"></span></p>
+
+                <form id="pre-expt-form">
+                    <div class="form-group">
+                        <label for="q1">1) Please indicate the age group you belong to.</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q1" id="optionsRadios1" value="19 - 24"> 19 - 24
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q1" id="optionsRadios2" value="25 - 30"> 25 - 30
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q1" id="optionsRadios3" value="31 - 36"> 31 - 36
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q1" id="optionsRadios4" value="37 - 42"> 37 - 42
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q1" id="optionsRadios5" value="43 - 48"> 43 - 48
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="q2">2) On average, how many hours do you spend on the computer daily?</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q2" value="Rarely"> Rarely
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q2" value="1 - 2 hours"> 1 - 2 hours
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q2" value="3 - 4 hours"> 3 - 4 hours
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q2" value="5 - 6 hours"> 5 - 6 hours
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q2" value="More than 7 hours"> More than 7 hours
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="q3">3) List the operating platforms that you are <u>comfortable</u> with working on. <u>You can select more than one.</u></label>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="q3" value="Windows"> Windows
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="q3" value="OSX"> Mac OSX
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="q3" value="Linux"> Linux
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            Others: Please write them in the text area below
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="q3"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="q4">4) Gender</u></label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q4" value="Male"> Male
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q4" value="Female"> Female
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="q5">5) Please select your handedness</u></label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q5" value="Left"> Left
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q5" value="Right"> Right
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q5" value="Ambidextrous"> Ambidextrous
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="q6">6) Which of the following are you using to complete this experiment?</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q6" value="Laptop"> Laptop (inbuilt keyboard)
+                            </label>
+                        </div>
+                        
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q6" value="Laptop(ext)"> Laptop (external keyboard)
+                            </label>
+                        </div>
+                        
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q6" value="Desktop"> Desktop with external keyboard
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="q7">7) Are you using a mouse?</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q7" value="No mouse"> No
+                            </label>
+                        </div>
+                        
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="q7" value="Mouse"> Yes
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/DataStorage.js"></script>
+    <script src="js/ACPToolKit.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        $(function () {
+            $('#pre-expt-form').submit(function (event) {
+                event.preventDefault();
+                if(validateForm()) {
                     var formResponses = $(this).serializeArray();
-                    // Do your own form validation here.
                     ACPToolKit.downloadFormData(formResponses, 'pre');
-                    window.location = 'experiment.html';
-                });
+                    window.location = 'instructions.html';
+                }
             });
-        </script>
-    </body>
+        });
+            
+        function validateForm() {
+            var a = document.forms["pre-expt-form"]["q1"].value;
+            var b = document.forms["pre-expt-form"]["q2"].value;
+            var c = document.forms["pre-expt-form"]["q3"];
+            var d = document.forms["pre-expt-form"]["q4"].value;
+            var e = document.forms["pre-expt-form"]["q5"].value;
+            var f = document.forms["pre-expt-form"]["q6"].value;
+            var g = document.forms["pre-expt-form"]["q7"].value;
+            
+            if(a == null || a == "") {
+                alert("Please fill in question 1.");
+                return false;
+            }
+            
+            if(b == null || b == "") {
+                alert("Please fill in question 2.");
+                return false;
+            }
+            
+            if(!c[0].checked && !c[1].checked && !c[2].checked && (c[3].value == null || c[3].value == "")) {
+                alert("Please fill in question 3.");
+                return false;
+            }
+            
+            if(d == null || d == "") {
+                alert("Please fill in question 4.");
+                return false;
+            }
+            
+            if(e == null || e == "") {
+                alert("Please fill in question 5.");
+                return false;
+            }
+            
+            if(f == null || f == "") {
+                alert("Please fill in question 6.");
+                return false;
+            }
+            
+            if(g == null || g == "") {
+                alert("Please fill in question 6.");
+                return false;
+            }
+            
+            return true;
+        }
+        
+        function validateForm1() {
+            event.preventDefault();
+            var a = document.forms["pre-expt-form"]["q1"].value;
+            var b = document.forms["pre-expt-form"]["q2"].value;
+            var c = document.forms["pre-expt-form"]["q3"];
+            var d = document.forms["pre-expt-form"]["q4"].value;
+            var e = document.forms["pre-expt-form"]["q5"].value;
+            var f = document.forms["pre-expt-form"]["q6"].value;
+            
+            if(a == null || a == "") {
+                alert("Please fill in question 1.");
+                return false;
+            }
+            
+            if(b == null || b == "") {
+                alert("Please fill in question 2.");
+                return false;
+            }
+            
+            if(!c[0].checked && !c[1].checked && !c[2].checked && (c[3].value == null || c[3].value == "")) {
+                alert("Please fill in question 3.");
+                return false;
+            }
+            
+            if(d == null || d == "") {
+                alert("Please fill in question 4.");
+                return false;
+            }
+            
+            if(e == null || e == "") {
+                alert("Please fill in question 5.");
+                return false;
+            }
+            
+            if(f == null || f == "") {
+                alert("Please fill in question 6.");
+                return false;
+            }
+            
+            if(g == null || g == "") {
+                alert("Please fill in question 6.");
+                return false;
+            }
+        }
+       
+    </script>
+</body>
+
 </html>

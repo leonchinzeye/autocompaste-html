@@ -38,6 +38,11 @@ var ACPToolKit = (function () {
         var pid = ACPToolKit.getCurrentParticipantId();
         arrayToCSV(data, 'acp-' + pid + '-trials');
     }
+    
+    module.downloadOverallResults = function (data) {
+        var pid = ACPToolKit.getCurrentParticipantId();
+        arrayToCSV(data, 'acp-' + pid + '-live');
+    }
 
     function arrayToCSV (twoDiArray, fileName) {
         //  http://stackoverflow.com/questions/17836273/export-javascript-data
@@ -84,6 +89,7 @@ var ACPToolKit = (function () {
 
             $('.js-expt-technique').text(options.technique);
             $('.js-expt-granularity').text(options.granularity);
+            $('.js-expt-language').text(options.language);
             $('.js-expt-stimuli').text(options.stimuli);
 
             // Clean up DOM
